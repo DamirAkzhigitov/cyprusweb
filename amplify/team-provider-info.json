@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cyprusweb-dev-04328-authRole",
+      "UnauthRoleArn": "arn:aws:iam::022477722668:role/amplify-cyprusweb-dev-04328-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::022477722668:role/amplify-cyprusweb-dev-04328-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-cyprusweb-dev-04328-deployment",
+      "UnauthRoleName": "amplify-cyprusweb-dev-04328-unauthRole",
+      "StackName": "amplify-cyprusweb-dev-04328",
+      "StackId": "arn:aws:cloudformation:eu-central-1:022477722668:stack/amplify-cyprusweb-dev-04328/a83ac710-903a-11ec-842a-02a80de95db0",
+      "AmplifyAppId": "dlm88ekd1jzet"
+    }
+  }
+}
