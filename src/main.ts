@@ -1,11 +1,10 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
-import Amplify from "aws-amplify";
-import awsExports from "./aws-exports.js";
+import vuetify from "./plugins/vuetify";
+import { loadFonts } from "./plugins/webfontloader";
 
-Amplify.configure(awsExports);
+loadFonts();
 
-createApp(App).use(store).use(router).mount("#app");
+createApp(App).use(router).use(store).use(vuetify).mount("#app");
