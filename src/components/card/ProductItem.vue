@@ -1,11 +1,5 @@
 <template>
-  <v-card class="mx-auto" max-width="344">
-    <v-img
-      src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-      height="200px"
-      cover
-    ></v-img>
-
+  <v-card class="mx-auto my-6" max-width="344">
     <v-card-title> Top western road trips </v-card-title>
 
     <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle>
@@ -37,12 +31,16 @@
   </v-card>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
   name: 'ProductItem',
   setup(props) {
     console.log('props: ', props)
+
+    return {
+      show: ref(false),
+    }
   },
 })
 </script>
