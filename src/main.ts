@@ -4,7 +4,11 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
 import { loadFonts } from './plugins/webfontloader'
+import { Amplify } from 'aws-amplify'
+import awsmobile from '@/aws-exports.js'
 
 loadFonts()
 
 createApp(App).use(router).use(store).use(vuetify).mount('#app')
+
+Amplify.configure(awsmobile)

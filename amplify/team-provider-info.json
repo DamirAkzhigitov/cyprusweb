@@ -14,6 +14,12 @@
     "categories": {
       "auth": {
         "cypruswebdc5a33f4": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "dlm88ekd1jzet",
+          "type": "manual"
+        }
       }
     }
   }
