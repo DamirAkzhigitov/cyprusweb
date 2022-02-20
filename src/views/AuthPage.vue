@@ -1,5 +1,7 @@
 <template>
   <div>
+    <v-btn tag="router-link" to="/">Вернуться на главную</v-btn>
+
     <authenticator>
       <template v-slot="{ user, signOut }">
         <h1>Hello {{ user.username }}!</h1>
