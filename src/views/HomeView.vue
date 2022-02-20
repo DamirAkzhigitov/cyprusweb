@@ -30,15 +30,25 @@
               :key="i"
               :value="item"
               active-color="primary"
+              @click="setCurrent(item)"
             >
               <v-list-item-title v-text="item.name" />
               <v-spacer />
               <v-list-item-subtitle v-text="item.description" />
+              <v-btn
+                v-show="current && current.id === item.id"
+                icon="mdi-delete"
+                @click="onClickDeleteTodo"
+              >
+                mdi-delete</v-btn
+              >
             </v-list-item>
           </v-list>
         </v-card>
       </v-col>
     </v-row>
+
+    current = {{ current }}
   </div>
 </template>
 
@@ -46,7 +56,7 @@
 import { defineComponent, onBeforeMount, Ref, ref } from 'vue'
 import { API, Auth } from 'aws-amplify'
 import { GraphQLResult } from '@aws-amplify/api'
-import { createTodo } from '@/graphql/mutations'
+import { createTodo, deleteTodo } from '@/graphql/mutations'
 import { listTodos } from '@/graphql/queries'
 import {
   ListTodosQuery,
@@ -63,6 +73,7 @@ export default defineComponent({
     const description = ref('')
     const isAuthorized = ref(false)
     const todos: Ref<Todo[]> = ref([])
+    const current: Ref<Todo | null> = ref(null)
 
     const onClickCreateTodo = async () => {
       console.log('onClickCreateTodo')
@@ -83,6 +94,27 @@ export default defineComponent({
 
       name.value = ''
       description.value = ''
+    }
+
+    const onClickDeleteTodo = async () => {
+      const todo = {
+        name: current.value?.name,
+        description: current.value?.description,
+      }
+
+      await API.graphql({
+        query: deleteTodo,
+        variables: { input: todo },
+      })
+    }
+
+    const setCurrent = (item: Todo) => {
+      if (current.value && current.value.id === item.id) {
+        current.value = null
+        return
+      }
+
+      current.value = item
     }
 
     const getTodos = async () => {
@@ -131,14 +163,17 @@ export default defineComponent({
     })
 
     return {
+      setCurrent,
       name,
       description,
       onClickCreateTodo,
+      onClickDeleteTodo,
       todos,
+      current,
     }
   },
   // components: {
-  //   'product-list': defineAsyncComponent(
+  //   'product-list': defineAsyncComponent (
   //     () => import('@/components/ProductList.vue')
   //   ),
   // },

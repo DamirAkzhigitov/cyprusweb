@@ -1,25 +1,25 @@
 {
-  "dev": {
+  "sampledev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-cyprusweb-dev-04328-authRole",
-      "UnauthRoleArn": "arn:aws:iam::022477722668:role/amplify-cyprusweb-dev-04328-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::022477722668:role/amplify-cyprusweb-dev-04328-authRole",
+      "AuthRoleName": "amplify-cyprusweb-sampledev-171816-authRole",
+      "UnauthRoleArn": "arn:aws:iam::022477722668:role/amplify-cyprusweb-sampledev-171816-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::022477722668:role/amplify-cyprusweb-sampledev-171816-authRole",
       "Region": "eu-central-1",
-      "DeploymentBucketName": "amplify-cyprusweb-dev-04328-deployment",
-      "UnauthRoleName": "amplify-cyprusweb-dev-04328-unauthRole",
-      "StackName": "amplify-cyprusweb-dev-04328",
-      "StackId": "arn:aws:cloudformation:eu-central-1:022477722668:stack/amplify-cyprusweb-dev-04328/a83ac710-903a-11ec-842a-02a80de95db0",
-      "AmplifyAppId": "dlm88ekd1jzet"
+      "DeploymentBucketName": "amplify-cyprusweb-sampledev-171816-deployment",
+      "UnauthRoleName": "amplify-cyprusweb-sampledev-171816-unauthRole",
+      "StackName": "amplify-cyprusweb-sampledev-171816",
+      "StackId": "arn:aws:cloudformation:eu-central-1:022477722668:stack/amplify-cyprusweb-sampledev-171816/f4505c40-9257-11ec-b623-06a51b47056a",
+      "AmplifyAppId": "d3j69bk53oxs6j"
     },
     "categories": {
-      "auth": {
-        "cypruswebdc5a33f4": {}
-      },
       "hosting": {
         "amplifyhosting": {
-          "appId": "dlm88ekd1jzet",
+          "appId": "d3j69bk53oxs6j",
           "type": "manual"
         }
+      },
+      "auth": {
+        "cypruswebdc5a33f4": {}
       }
     }
   }
